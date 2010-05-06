@@ -17,7 +17,7 @@ entries_table = Table('entries', metadata,
     Column('tags', VARCHAR(512), server_default="", nullable=False),                   
     Column('summary', mysql.MSMediumText),
     # Note: SQLAlchemy doesnt seem to have a way to create a current_timestamp col
-    # So see upgrade script 2 where we do it with raw sql.
+    # So see upgrade script 4 where we do it with raw sql.
     #Column('created', TIMESTAMP, default='current_timestamp')
 )                                                                                                                    
                                                                                                                     
