@@ -8,7 +8,7 @@ from sqlalchemy.databases import mysql
 metadata = MetaData(migrate_engine)
 
 # New tables
-entries_table = Table('entries', metadata,
+entry_table = Table('entry', metadata,
     Column('id', mysql.MSInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
     Column('feed_id', VARCHAR(128), nullable=False),
     Column('title', VARCHAR(512), nullable=False),                   
@@ -23,8 +23,8 @@ entries_table = Table('entries', metadata,
                                                                                                                     
 
 def upgrade():
-    entries_table.create()
+    entry_table.create()
 
 def downgrade():
-    entries_table.drop()
+    entry_table.drop()
 

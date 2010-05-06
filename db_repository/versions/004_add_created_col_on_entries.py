@@ -8,7 +8,7 @@ from sqlalchemy.databases import mysql
 metadata = MetaData(migrate_engine)
 
 # Existing tables
-entries_table = Table('entries', metadata,
+entry_table = Table('entry', metadata,
     Column('id', mysql.MSInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
     Column('feed_id', VARCHAR(128), nullable=False),
     Column('title', VARCHAR(512), nullable=False),                   
@@ -22,11 +22,11 @@ entries_table = Table('entries', metadata,
 )                                                                                                                    
 
 def upgrade():
-    sql = "ALTER TABLE entries ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;"
+    sql = "ALTER TABLE entry ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;"
     migrate_engine.execute(sql);
 
 
 def downgrade():
-    sql = "ALTER TABLE entries DROP created;"
+    sql = "ALTER TABLE entry DROP created;"
     migrate_engine.execute(sql);
     

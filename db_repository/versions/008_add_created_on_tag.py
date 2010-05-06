@@ -8,20 +8,22 @@ from sqlalchemy.databases import mysql
 metadata = MetaData(migrate_engine)
 
 # Existing tables
-fetch_table = Table('fetch', metadata,
+tag_table = Table('tag', metadata,
     Column('id', mysql.MSBigInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
-    Column('feed_id', mysql.MSBigInteger(unsigned=True), nullable=False),
-    Column('result', VARCHAR(512), server_default="", nullable=False),                   
+    Column('entry_id', mysql.MSBigInteger(unsigned=True), nullable=False),
+    Column('keyword', VARCHAR(64), server_default="", nullable=False),                   
+    # The following column is the lowercased version of the tag              
+    Column('lower', VARCHAR(64), server_default="", nullable=False)              
     # Note: SQLAlchemy doesnt seem to have a way to create a current_timestamp col
-    # So see upgrade script 6 where we do it with raw sql.
+    # So see upgrade script 8 where we do it with raw sql.
     #Column('created', TIMESTAMP, default='current_timestamp')
 )                                                                                                                    
 
 def upgrade():
-    sql = "ALTER TABLE `fetch` ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;"
+    sql = "ALTER TABLE tag ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;"
     migrate_engine.execute(sql);
 
 
 def downgrade():
-    sql = "ALTER TABLE `fetch` DROP created;"
+    sql = "ALTER TABLE tag DROP created;"
     migrate_engine.execute(sql);
