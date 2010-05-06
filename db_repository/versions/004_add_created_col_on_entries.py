@@ -7,24 +7,26 @@ from sqlalchemy.databases import mysql
 
 metadata = MetaData(migrate_engine)
 
-# New tables
+# Existing tables
 entries_table = Table('entries', metadata,
     Column('id', mysql.MSInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
     Column('feed_id', VARCHAR(128), nullable=False),
     Column('title', VARCHAR(512), nullable=False),                   
     Column('url', VARCHAR(256), nullable=False),
     Column('pubtime', DATETIME),                 
-    Column('tags', VARCHAR(512), server_default="", nullable=False),                   
     Column('summary', mysql.MSMediumText),
+    Column('tags', VARCHAR(512))                  
     # Note: SQLAlchemy doesnt seem to have a way to create a current_timestamp col
     # So see upgrade script 2 where we do it with raw sql.
     #Column('created', TIMESTAMP, default='current_timestamp')
 )                                                                                                                    
-                                                                                                                    
 
 def upgrade():
-    entries_table.create()
+    sql = "ALTER TABLE entries ADD COLUMN created TIMESTAMP DEFAULT CURRENT_TIMESTAMP;"
+    migrate_engine.execute(sql);
+
 
 def downgrade():
-    entries_table.drop()
-
+    sql = "ALTER TABLE entries DROP created;"
+    migrate_engine.execute(sql);
+    
