@@ -8,7 +8,7 @@ from paste.deploy import appconfig
 #from pylons import app_globals
 from abraxas.config.environment import load_environment
 
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, select
 from sqlalchemy.exc import IntegrityError
 import sqlalchemy as sa
 
