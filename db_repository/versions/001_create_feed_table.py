@@ -10,11 +10,11 @@ metadata = MetaData(migrate_engine)
 # New tables
 feed_table = Table('feed', metadata,
     Column('id', mysql.MSInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
-    Column('title', VARCHAR(128), nullable=False),
-    Column('url', VARCHAR(256), nullable=False),
-    Column('active', mysql.MSTinyInteger(unsigned=True)),
+    Column('title', VARCHAR(128), nullable=False, index=True, unique=True),
+    Column('url', VARCHAR(256), nullable=False, unique=True),
+    Column('active', mysql.MSTinyInteger(unsigned=True), server_default="1"),
     Column('last_fetched_at', DATETIME),                 
-    Column('items', mysql.MSInteger),
+    Column('items', mysql.MSInteger, server_default="0"),
     Column('author', VARCHAR(50)),                 
     Column('weburl', VARCHAR(256)),
     # Note: SQLAlchemy doesnt seem to have a way to create a current_timestamp col
