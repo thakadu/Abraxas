@@ -19,6 +19,7 @@ from abraxas.model.meta import Session
 from abraxas.model import Feed
 from abraxas.model import Fetch
 from abraxas.model import Entry
+from abraxas.lib.util import get_host
 
 socket.setdefaulttimeout(20)
 feedparser.USER_AGENT = \
@@ -60,6 +61,10 @@ def fetch(feed):
             # If all aobe failed we will just use current gmtime
             published = time.gmtime()
         
+        # Now convert published to a datetime     
+        published = datetime.datetime(*published[:6])
+        raw_input("published=%s" % str(published))
+
         summary = e.get('summary')
         
         # Now save the entry into the db...
@@ -69,6 +74,7 @@ def fetch(feed):
         entry.url = url
         entry.pubtime = published
         entry.summary = summary
+        entry.host = get_host(feed.weburl)
         Session.add(entry)
         Session.commit()
         count += 1

@@ -19,6 +19,9 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
+    map.connect('/', controller='entry', action='index')
+    map.connect('/tag/{keyword}', controller='entry', action='tag')
+
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
 

@@ -1,4 +1,4 @@
-"""Fetches feeds and stores fetched items into database"""
+"""Tags Entries using the SiLCC Web API"""
 import time
 import socket
 import datetime
@@ -19,6 +19,7 @@ from abraxas.model.meta import Session
 from abraxas.model import Feed
 from abraxas.model import Fetch
 from abraxas.model import Entry
+from abraxas.model import Tag
 
 from abraxas.lib.tag import *
 socket.setdefaulttimeout(20)
@@ -60,6 +61,7 @@ if __name__ == '__main__':
         tags = tag(text)
         print tags
         e.tags = ' '.join(tags)
+        e.tag(tags)
         Session.add(e)
     Session.commit()
 

@@ -13,9 +13,10 @@ entry_table = Table('entry', metadata,
     Column('feed_id', VARCHAR(128), nullable=False),
     Column('title', VARCHAR(512), nullable=False),                   
     Column('url', VARCHAR(256), nullable=False, unique=True, index=True),
-    Column('pubtime', DATETIME),                 
+    Column('pubtime', DATETIME, index=True),                 
     Column('tags', VARCHAR(512), nullable=True),                   
     Column('summary', mysql.MSMediumText),
+    Column('host', VARCHAR(64), nullable=False)
     # Note: SQLAlchemy doesnt seem to have a way to create a current_timestamp col
     # So see upgrade script 4 where we do it with raw sql.
     #Column('created', TIMESTAMP, default='current_timestamp')

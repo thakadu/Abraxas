@@ -8,6 +8,7 @@ from abraxas.model import meta
 from abraxas.model.fetch import Fetch
 from abraxas.model.feed import Feed
 from abraxas.model.entry import Entry
+from abraxas.model.tag import Tag
 
 def init_model(engine):
     """Call me before using any of the tables or classes in the model"""
@@ -24,3 +25,7 @@ def init_model(engine):
     entry_table = sa.Table('entry', meta.metadata, autoload=True, autoload_with=engine)
     Entry.table = entry_table
     orm.mapper(Entry, Entry.table)
+
+    tag_table = sa.Table('tag', meta.metadata, autoload=True, autoload_with=engine)
+    Tag.table = tag_table
+    orm.mapper(Tag, Tag.table)
