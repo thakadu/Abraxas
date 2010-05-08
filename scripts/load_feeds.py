@@ -26,6 +26,7 @@ class DataFormatException(Exception):
 if __name__ == '__main__':
 
     parser = OptionParser()
+
     parser.add_option('--ini',
                       help='INI file to use for application settings',
                       type='str',
