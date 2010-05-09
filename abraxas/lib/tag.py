@@ -4,6 +4,8 @@ import urllib
 import simplejson
 
 def tag(text):
+    if type(text) == unicode:
+        text = text.encode('utf-8')
     values = dict(text=text,key='AAAABBBB')
     data = urllib.urlencode(values)
     request = urllib2.Request('http://silcc.nrny.net/api/tag', data)

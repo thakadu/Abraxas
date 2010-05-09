@@ -19,8 +19,16 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
-    map.connect('/', controller='entry', action='index')
+    # Note that we need to specify the view and page  if using the entry controller
+    # as it is referenced in the __before__ of BaseController
+    map.connect('/', controller='entry', action='index', view='latest', page=0)
+    map.connect('/latest', controller='entry', action='index', view='latest', page=0)
+    map.connect('/latest/{page}', controller='entry', action='index', view='latest')
+
     map.connect('/tag/{keyword}', controller='entry', action='tag')
+
+    map.connect('/download', controller='other', action='download')
+    map.connect('/about', controller='other', action='download')
 
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')

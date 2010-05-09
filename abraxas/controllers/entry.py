@@ -28,14 +28,14 @@ class EntryController(BaseController):
         ])
         order_by = cols.pubtime.desc()
         # todo, sort this pageination stuff out move to basecontroller
-        c.slicestart = 0
-        c.page = long(page)
-        c.page_numeric = c.page
-        c.pagesize = 25
-        c.tags = []
+        #c.slicestart = 0
+        #c.page = long(page)
+        #c.page_numeric = c.page
+        #c.pagesize = 25
         query = query.limit(25).offset(c.slicestart)
         query = query.order_by(order_by)
         c.links = Session.execute(query).fetchall()
+        c.view = 'latest'
         return render('/links_960.mako')
 
     def tag(self, keyword, format='html', page=0):
@@ -54,7 +54,6 @@ class EntryController(BaseController):
         c.page = long(page)
         c.page_numeric = c.page
         c.pagesize = 25
-        c.tags = []
         query = query.limit(c.pagesize)
         query = query.offset(c.slicestart)
         query = query.order_by(cols.pubtime.desc())
