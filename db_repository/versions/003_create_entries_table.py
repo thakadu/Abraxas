@@ -12,6 +12,8 @@ entry_table = Table('entry', metadata,
     Column('id', mysql.MSInteger(unsigned=True), autoincrement=True, primary_key=True, nullable=False),
     Column('feed_id', VARCHAR(128), nullable=False),
     Column('title', VARCHAR(512), nullable=False),                   
+    # The following field is denormalized from feed table...                
+    Column('feed_title', VARCHAR(128), nullable=False),                   
     Column('url', VARCHAR(256), nullable=False, unique=True, index=True),
     Column('pubtime', DATETIME, index=True),                 
     Column('tags', VARCHAR(512), nullable=True),                   

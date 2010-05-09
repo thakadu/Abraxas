@@ -63,7 +63,6 @@ def fetch(feed):
         
         # Now convert published to a datetime     
         published = datetime.datetime(*published[:6])
-        raw_input("published=%s" % str(published))
 
         summary = e.get('summary')
         
@@ -71,6 +70,7 @@ def fetch(feed):
         entry = Entry()
         entry.feed_id = feed.id
         entry.title = title
+        entry.feed_title = feed.title
         entry.url = url
         entry.pubtime = published
         entry.summary = summary
@@ -127,6 +127,6 @@ if __name__ == '__main__':
             #except:
             #    print 'Error updating feed %s' % f.title
             #    raise
-        print "%s new entries added" % new
+        print "%s new entries added from %s" % (new, f.title)
         print '----------------------------------'
 

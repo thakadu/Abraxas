@@ -1,0 +1,81 @@
+a.nav{text-decoration:none;font-size:100%;color:gray}
+a.view{font-size:240%;color:black}
+a.current_view{color:#009900}
+a.l{font-size:160%;color:#444444;text-decoration:none}
+a.l:hover{background:#444444;color:white;}
+a.by{text-decoration:none;color:#333}
+a.by:hover{text-decoration:underline}
+body{background:#ffffff}
+
+div#navbar ul{padding-left:0;margin-left:0;background-color: #4768b1;color: #fff;float: left;width: 100%;}
+div#navbar ul li{display:inline}
+div#navbar ul li a{padding: 0.2em 1em;color:white;text-decoration: none;float: left;border-right: 1px solid #fff;}
+div#navbar ul li a:hover,a.current_view { background-color: #016b02;color: #fff;}
+
+div#log1in{margin-left:auto;margin-right:auto;width:220px;margin-bottom:10px}
+
+
+div#user_actions{margin-bottom:10px}
+div#sidebar{background:padding-top:10px}
+div#footer{text-align:center;border-top:3px solid #bbbbbb;margin-top:20px;padding:10px;background:#dddddd}
+div#footer{border-bottom:3px solid #bbbbbb}
+div.vote_box{text-align:center;height:45px;background:#f1f1f1}
+div.sub{margin-bottom:10px;border-top:2px solid #aaaaaa}
+div.pg{text-align:right}
+div#profile h1 {font-size:100%;font-weight:normal}
+
+div#adverts{text-align:center;border:3px solid #dddddd;margin-bottom:10px;padding:0px;}
+div#adverts h1 {font-size:100%;background:#e9e9e9;color:black;margin:0px}
+
+div#sidebar div#user_actions ul{list-style: none;margin: 0;padding: 0;border: none;}
+div#sidebar div#user_actions li{border-bottom: 1px solid #ccc;margin-left: 0px;}
+div#sidebar div#user_actions li a{display: block;padding: 0px 0px 0px 0px;
+												 	background-color: #fff;color: #333;
+													text-decoration: none;width: 100%}
+div#sidebar div#user_actions li a:hover{background-color:#666;color:#fff}
+
+div#sidebar div#tags h1{background:#e9e9e9;margin:0px;font-size:100%;color:black}
+div#sidebar div#tags{padding: 0 0 0 0;	margin-bottom: 1em;
+						color: gray;}
+div#sidebar div#tags ul{list-style: none;margin: 0;padding: 0;border: none;text-align:right}
+div#sidebar div#tags li{border-bottom: 1px solid #ccc;margin-left: 0px;}
+div#sidebar div#tags li a{display: block;padding: 0px 0px 0px 0px;
+												 	background-color: #fff;color: #333;
+													text-decoration: none;width: 100%}
+div#sidebar div#tags li a:hover{background-color:#666;color:#fff}
+
+form#banner_search{margin-top:20px;text-align:center}
+
+div#user_actions p#username{background:#e9e9e9;margin-bottom:0px;padding:2px;padding-top:3px}
+p.h{display:inline}
+p.h span.feed_title{color:#ff0000;background:#ffffff;font-size:120%}
+p.h span.pubtime{color: gray;font-size: 100%;}
+p.v_{display:inline;font-size:130%;font-family:Georgia;color:rgb(71,104,177)}
+p.v{display:inline;font-size:130%;font-family:Helvetica;font-weight:bold;color: #777777}
+p.l{display:inline;color:#808080;font-size:80%}
+div.sub a.l__{text-decoration:none;font-size:140%;}
+div.sub a.l__:hover{text-decoration:underline}
+div.sub a.c{color:black;font-size:80%;text-decoration:none}
+div.sub a.c:hover{text-decoration:underline}
+div.link_actions a{text-decoration:none;font-size:80%;color:gray;background: #f1f1f1;}
+
+table#profile td {padding-left:3px;font-weight:bold}
+table#profile td.r {text-align:right;font-weight:normal}
+
+div.sub div.tags{float:right;text-align:right}
+div.sub div.tags a{display:inline;background:#ffffaa;padding:3px;line-height:180%;text-decoration:none;color:#333}
+
+div.tags ul
+{
+padding-left: 0;
+margin-left: 0;
+background-color: #036;
+color: White;
+float: left;
+font-family: arial, helvetica, sans-serif;
+}
+
+div.sub div.tags ul li{display:inline}
+input:focus, textarea:focus{background-color: lightyellow; outline: 1px solid #4768b1;}
+span.error_message {color:red;font-weight:bold}
+

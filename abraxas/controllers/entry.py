@@ -24,7 +24,8 @@ class EntryController(BaseController):
             cols.url,
             cols.tags,
             cols.pubtime,
-            cols.host
+            cols.host,
+            cols.feed_title
         ])
         order_by = cols.pubtime.desc()
         # todo, sort this pageination stuff out move to basecontroller
@@ -47,7 +48,8 @@ class EntryController(BaseController):
             cols.url,
             cols.tags,
             cols.pubtime,
-            cols.host
+            cols.host,
+            cols.feed_title
         ], from_obj=j)
         query = query.where(tag_table.c.lower==keyword.lower())
         c.slicestart = 0
