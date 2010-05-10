@@ -12,6 +12,52 @@ and cross referenced.
 Installation and Setup
 ======================
 
+1) Create a Python Virtual environment from which to run Abraxas
+
+Note that this step is optional but higly recommended.
+
+run virtualenv name_of_environment for example:
+$ virtualenv abraxas_env
+
+    (If virtualenv is not installed then on Ubuntu the easiest way is
+     to use easy_install to install it. If easy_install itself is not installed then first:
+
+     $ sudo apt-get install python-setuptools
+     then:
+     $ sudo easy_install virtualenv)
+
+This will create a new virtual Python environment for you.
+Now activate your new environment:
+
+$ source abraxas_env/bin/activate
+
+This should change your prompt into something similar to:
+
+(abraxas_env)me@myserver:~/webapps$ 
+
+Issuing a 'which python' command should confirm that the virtualenv is now
+activated:
+
+(abraxas_env)me@myserver:~/webapps$ which python
+/home/me/webapps/abraxas_env/bin/python
+
+2) Now checkout a copy of the Abraxas source code:
+
+(abraxas_env)me@myserver:~/webapps$ git clone git://github.com/thakadu/Abraxas.git
+
+3) Within the abraxas directory setup the application:
+
+(abraxas_env)me@myserver:~/webapps$ cd abraxas
+(abraxas_env)me@myserver:~/webapps/abraxas$
+
+ 
+
+
+
+
+
+ 
+
 Install ``abraxas`` using easy_install::
 
     easy_install abraxas

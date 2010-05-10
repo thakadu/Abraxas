@@ -7,7 +7,7 @@ import logging
 from pylons.controllers import WSGIController
 from pylons.controllers.util import abort
 from pylons.templating import render_mako as render
-from pylons import cache
+from pylons import cache, config
 from pylons import request, response, session, tmpl_context as c
 
 from abraxas.model.meta import Session
@@ -26,6 +26,9 @@ class BaseController(WSGIController):
                                    type="memory", expiretime=120)
 
         log.debug('after call to mycache.get_value("tags"))')
+
+        # Pass the logo_file name to the template context
+        c.logo_file = config.get('logo_file', 'logo.png')
 
         # Set up pagination
         if self.__class__.__name__ == 'EntryController':

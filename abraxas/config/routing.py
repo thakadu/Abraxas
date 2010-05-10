@@ -22,11 +22,16 @@ def make_map(config):
     # Note that we need to specify the view and page  if using the entry controller
     # as it is referenced in the __before__ of BaseController
     map.connect('/', controller='entry', action='index', view='latest', page=0)
+    map.connect('/Latest', controller='entry', action='index', view='latest', page=0)
+    map.connect('/Latest/{page}', controller='entry', action='index', view='latest')
     map.connect('/latest', controller='entry', action='index', view='latest', page=0)
     map.connect('/latest/{page}', controller='entry', action='index', view='latest')
 
-    map.connect('/tag/{keyword}', controller='entry', action='tag')
+    map.connect('/tag/{keyword}', controller='entry', action='tag', view='tag', page=0)
+    map.connect('/tag/{keyword}/{page}', controller='entry', action='tag', view='tag')
 
+    map.connect('/Download', controller='other', action='download')
+    map.connect('/About', controller='other', action='download')
     map.connect('/download', controller='other', action='download')
     map.connect('/about', controller='other', action='download')
 
