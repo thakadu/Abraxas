@@ -171,64 +171,35 @@ $ python scripts/tag_entries.py --ini=development.ini
 
 11) Now start your server:
 
+Before starting your server there are a few settings
+in the .ini files that you should be aware of.
+
+Firstly the port that your Pylons application will
+listen on. This is set to 5003, change it if you want to.
+The host setting is set to 127.0.0.1, meaning
+only local connections will be allowed.
+It us higly recommended that you run your application
+behind Apache, nginx or any other popular full fledged
+web server, so in most cases you wont need to change
+the host setting. 
+
+The logo file to use for your site is specified in
+the logo_file setting. This is defaulted to logo.png
+in the public/static directory. Change it to 
+a logo for your site.
+
+To start your server:
+
 $ paster serve development.ini --daemon
 
+By default it will log to a file called paster.log.
+Watch this file for any errors.
 
+Now point your browser to http://127.0.0.1:5003
+and you should be able to view your site.
 
- 
+In order to keep your site up to date you need
+to periodically run the fetch_feeds.py and the tag_entries.py
+scripts. The best way to so this is to place them in
+your crontab.
 
-
-
-
-
- 
-
-Install ``abraxas`` using easy_install::
-
-    easy_install abraxas
-
-Make a config file as follows::
-
-    paster make-config abraxas config.ini
-
-Tweak the config file as appropriate and then setup the application::
-
-    paster setup-app config.ini
-
-Then you are ready to go.
-
-
-To generate the database schema follow these steps:
-
-1) First install sqlalchemy-migrate (if its not installed in your environment already):
-
-$ easy_install sqlalchemy-migrate
-
-2) For new installations create the db_repository, if you already have
-the db_repository directory then skip this step.
- 
-$ migrate create db_repository "Abraxas DB Version Control"
-
-
-3) Now create a custome manage.py script unless you want to use the one
-from the main Abraxas repo.
-
-$ migrate manage manage.py --repository=db_repository --url=mysql://abraxas:abraxas@localhost:3306/abraxas
-
-4) now place your database under version control with:
-
-$ python db_repository/manage.py version_control  mysql://abraxas:abraxas@localhost:3306/abraxas
-
-or using the above manage.py:
-
-$ python manage.py version_control
-
-This will create the migrate_version table in your database and set the
-initial version to 0.
-
-After that you may run any schema upgrade scripts including the
-first one which will create the necessary tables.
-
-5) Now run a db update to generate the initial schema:
-
-$ python manage.py update
