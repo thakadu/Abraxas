@@ -68,8 +68,8 @@ Abraxas
 </%def>
 ## -------------------------- banner ---------------------------
 <%def name="banner()">
-  <div class="grid_11"><img src="${c.logo_file}" alt="Logo" onclick="document.location='/'" /></div>
-  <div class="grid_5">
+  <div class="grid_11 banner"><img src="${c.logo_file}" alt="Logo" onclick="document.location='/'" /></div>
+  <div class="grid_5 banner">
 ## If you want a search form in your banner uncomment these lines 
 ##    <form id="banner_search" action="/search">
 ##      <p>
