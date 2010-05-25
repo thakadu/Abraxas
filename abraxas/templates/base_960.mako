@@ -159,6 +159,18 @@ ${calc_age(sbdatesbmt)}
 </ul>
 </div>
 % endif
+
+% if c.sources:
+<div id="sources">
+<h1>Sources</h1>
+<ul>
+% for feed in c.sources:
+<li><a href="${feed.weburl}">${feed.title}</a></li>
+% endfor
+</ul>
+</div>
+% endif
+
 <div style="text-align:center">
 <img src="/static/swift_river.png" alt="Swift River" />
 </div>

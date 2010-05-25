@@ -11,7 +11,7 @@ from pylons import cache, config
 from pylons import request, response, session, tmpl_context as c
 
 from abraxas.model.meta import Session
-from abraxas.model import Tag
+from abraxas.model import Tag, Feed
 
 log = logging.getLogger(__name__)
 
@@ -26,6 +26,11 @@ class BaseController(WSGIController):
                                    type="memory", expiretime=120)
 
         log.debug('after call to mycache.get_value("tags"))')
+
+        c.sources = mycache.get_value(key='sources', createfunc=Feed.active_feeds,
+                                    type='memory', expiretime=120)
+
+        log.debug('after call to mycache.get_value("feeds"))')
 
         # Pass the logo_file name to the template context
         c.logo_file = config.get('logo_file', 'logo.png')

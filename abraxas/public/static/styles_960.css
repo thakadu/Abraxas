@@ -44,6 +44,17 @@ div#sidebar div#tags li a{display: block;padding: 0px 0px 0px 0px;
 													text-decoration: none;width: 100%}
 div#sidebar div#tags li a:hover{background-color:#666;color:#fff}
 
+div#sidebar div#sources h1{background:#e9e9e9;margin:0px;font-size:100%;color:black}
+div#sidebar div#sources{padding: 0 0 0 0;	margin-bottom: 1em;
+						color: gray;}
+div#sidebar div#sources ul{list-style: none;margin: 0;padding: 0;border: none;text-align:right}
+div#sidebar div#sources li{border-bottom: 1px solid #ccc;margin-left: 0px;}
+div#sidebar div#sources li a{display: block;padding: 0px 0px 0px 0px;
+												 	background-color: #fff;color: #333;
+													text-decoration: none;width: 100%}
+div#sidebar div#sources li a:hover{background-color:#666;color:#fff}
+
+
 form#banner_search{margin-top:20px;text-align:center}
 
 div#user_actions p#username{background:#e9e9e9;margin-bottom:0px;padding:2px;padding-top:3px}
