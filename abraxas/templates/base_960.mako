@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="/static/reset.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/static/text.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/static/960.css" />
-<link href="/static/styles_960.css" media="screen" rel="Stylesheet" type="text/css" />
+<link href="/static/pycss.css" media="screen" rel="Stylesheet" type="text/css" />
 </head>
 <body>
 ## /--------------------- * container_16 id=container * ---------------------\
@@ -84,9 +84,9 @@ Abraxas
 <%
     views = ('Latest', 'About', 'Download')
 %>
-<ul>
+<ul class="navbar">
 % for v in views:
-    <li><a href="/${v}">${v}</a></li>
+    <li class="navbar"><a class="navbar" href="/${v}">${v}</a></li>
 ##<li><a href="/${v}">${v}</a></li>
 ##    % if c.view == v:
 ##    <li><a href="/${v}" class="current_view">${v}</a></li>
@@ -114,9 +114,9 @@ ${self.format_link_actions(entry['id'],entry)}
 </%def>
 ## ------------- format tags in links ------------------------------
 <%def name="format_tags(tags, user_tags)">
-<div class="tags">
+<div class="sub_tags">
 % for tag in tags.split():
-<a href="/tag/${tag}">${tag}</a>
+<a class="sub_tag" href="/tag/${tag}">${tag}</a>
 % endfor
 </div>
 </%def>
@@ -150,11 +150,11 @@ ${calc_age(sbdatesbmt)}
 ## -------------------------- Sidebar --------------------------
 <%def name="sidebar()">
 % if c.tags:
-<div id="tags">
-<h1>Popular Tags</h1>
-<ul>
+<div id="sidebar_tags">
+<h1 id="sidebar_tags_header">Popular Tags</h1>
+<ul class="sidebar_tags">
 % for tag in c.tags:
-<li><a href="/tag/${tag['lower']}">${tag['lower']}</a></li>
+<li class="sidebar_tags"><a class="sidebar_tags" href="/tag/${tag['lower']}">${tag['lower']}</a></li>
 % endfor
 </ul>
 </div>
@@ -162,10 +162,10 @@ ${calc_age(sbdatesbmt)}
 
 % if c.sources:
 <div id="sources">
-<h1>Sources</h1>
-<ul>
+<h1 id="sidebar_sources_header">Sources</h1>
+<ul class="sidebar_sources">
 % for feed in c.sources:
-<li><a href="${feed.weburl}">${feed.title}</a></li>
+<li class="sidebar_sources"><a class="sidebar_sources" href="${feed.weburl}">${feed.title}</a></li>
 % endfor
 </ul>
 </div>
@@ -185,8 +185,8 @@ ${calc_age(sbdatesbmt)}
 ## -------------------------- footer ---------------------------
 <%def name="footer()">
 <div id="footer">
-    <a class="banneraction" href="/about">About</a>&nbsp;|
-    <a class="banneraction" href="/download">Download</a>&nbsp;
+    <a class="footer" href="/about">About</a>&nbsp;|
+    <a class="footer" href="/download">Download</a>&nbsp;
 </div>
 </%def>
 ## -------------------------- jscripts -------------------------

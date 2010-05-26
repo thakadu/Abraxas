@@ -1,0 +1,35 @@
+/* Classes */
+a.banneraction {}
+a.l {font-size:160%;color:#444444;text-decoration:none}
+a.l:hover{background:#444444;color:white}
+a.nav {text-decoration:none;font-size:100%;color:gray}
+a.navbar {padding: 0.2em 1em;color:white;text-decoration: none;float: left;border-right: 1px solid #fff;}
+a.navbar:hover { background-color: #016b02;color: #fff;}
+a.sidebar_sources {display: block;padding: 0px 0px 0px 0px;background-color: #fff;color: #333;text-decoration: none;width: 100%}
+a.sidebar_sources:hover {background-color:#666;color:#fff}
+a.sidebar_tags {display: block;padding: 0px 0px 0px 0px;background-color: #fff;color: #333;text-decoration: none;width: 100%}
+a.sidebar_tags:hover {background-color:#666;color:#fff}
+a.sub_tag {display:inline;background:#ffffaa;padding:3px;line-height:180%;text-decoration:none;color:#333}
+div.banner {}
+div.clear {}
+div.link_actions {}
+div.pg {text-align:right}
+div.sub {margin-bottom:10px;border-top:2px solid #aaaaaa}
+div.sub_tags {float:right;text-align:right}
+div.tags {}
+li.navbar {display:inline}
+li.sidebar_sources {border-bottom: 1px solid #ccc;margin-left: 0px;}
+li.sidebar_tags {border-bottom: 1px solid #ccc;margin-left: 0px;}
+p.h {display:inline}
+p.l {display:inline;color:#808080;font-size:80%}
+span.feed_title {color:#ff0000;background:#ffffff;font-size:120%}
+span.pubtime {color: gray;font-size: 100%;}
+ul.navbar {padding-left:0;margin-left:0;background-color: #4768b1;color: #fff;float: left;width: 100%;}
+ul.sidebar_sources {list-style: none;margin: 0;padding: 0;border: none;text-align:right}
+ul.sidebar_tags {list-style: none;margin: 0;padding: 0;border: none;text-align:right}
+
+/* ids */
+div#footer {border-bottom:3px solid #bbbbbb;text-align:center;border-top:3px solid #bbbbbb;margin-top:20px;padding:10px;background:#dddddd}
+div#sidebar_tags {padding: 0 0 0 0;margin-bottom: 1em;color: gray}
+h1#sidebar_sources_header {background:#e9e9e9;margin:0px;font-size:100%;color:black}
+h1#sidebar_tags_header {background:#e9e9e9;margin:0px;font-size:100%;color:black}
