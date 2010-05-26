@@ -3,7 +3,7 @@
 <head>
 <title>${self.title()}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="stylesheet" type="text/css" media="all" href="/static/reset.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/static/text.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/static/960.css" />
