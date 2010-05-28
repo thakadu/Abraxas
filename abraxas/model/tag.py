@@ -17,13 +17,15 @@ class Tag(object):
     @staticmethod
     def popular():
         """Returns the most popular recent tags"""
+        log.info('*******popular method called in Tag class******')
         ntags = int(config.get('ntags', 20))
+        hours = int(config.get('popular_tags_window', 72))
         s = text('''
             select lower, count(*) tagcount from tag
-            where unix_timestamp(now())-unix_timestamp(created)<604800
+            where created > now() - interval :hours hour
             group by lower order by tagcount desc, lower 
             limit :limit
         ''')
-        tags = Session.execute(s, dict(limit=ntags)).fetchall()
+        tags = Session.execute(s, dict(limit=ntags,hours=hours)).fetchall()
         return tags
 

@@ -23,12 +23,12 @@ class BaseController(WSGIController):
         mycache = cache.get_cache('hot_tags')
         log.debug('before call to mycache.get_value("tags"))')
         c.tags = mycache.get_value(key='tags', createfunc=Tag.popular,
-                                   type="memory", expiretime=120)
+                                   type="memory", expiretime=3600)
 
         log.debug('after call to mycache.get_value("tags"))')
 
         c.sources = mycache.get_value(key='sources', createfunc=Feed.active_feeds,
-                                    type='memory', expiretime=120)
+                                    type='memory', expiretime=3600)
 
         log.debug('after call to mycache.get_value("feeds"))')
 
