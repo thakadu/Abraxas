@@ -61,8 +61,6 @@ Virtual Python enviroment created in step 1.
 
 4) Create the database for Abraxas to use. If using MySQL:
 
-5) Create the database. If using MySQL:
-
 $ mysql -u root -p
 
 Once in the mysql environment:
@@ -72,14 +70,14 @@ Once in the mysql environment:
 
 Now exit the MySQL enviroment by hitting Ctrl-D
 
-6) Set the SQLAlchemy url in the prod.ini and/or the development.ini files.
+5) Set the SQLAlchemy url in the prod.ini and/or the development.ini files.
 
 Fine the line that reads:
 sqlalchemy.url = mysql://abraxas:abraxas@tom:3306/abraxas
 and make sure it matches the database name, user name and password
 you used in step 5.
 
-7) Initialize the database:
+6) Initialize the database:
 
 We are going to use the supplied SQLAlchemy-migrate
 scripts to generate the initial tables and indexes.
@@ -89,7 +87,7 @@ under version control:
 $ python db_repository/manage.py version_control mysql://abraxas:password@localhost:3306/abraxas
 
 Make sure to use the correct url for the database you created
-in step 6.
+in step 4.
 
 This will create the migrate_version table in your database and set the
 initial version to 0. 
@@ -118,7 +116,7 @@ done
 
 
 
-8) Load your initial feeds that you want to include in your
+7) Load your initial feeds that you want to include in your
 Abraxas deployment. There is a loader script in the scripts
 directory called scripts/load_feeds.py
 It loads Feeds from a .csv file. Inside the data directory
@@ -148,7 +146,7 @@ $ mysql -u abraxas -p abraxas
 
 If all went well you should see a list of the feeds from your .csv file.
 
-9) Fetch the items from your feeds.
+8) Fetch the items from your feeds.
 As with the load_feeds script the fetch_feeds script also
 takes the .ini filename as a parameter. In all cases
 the default value is development.ini so you might want
@@ -160,7 +158,7 @@ $ python scripts/fetch_feeds.py --ini=development.ini
 This should download feeds from the feed urls supplied 
 for each feed and store each entry in the database.
 
-10) Tags the downloaded entries.
+9) Tags the downloaded entries.
 
 Run the script scripts/tag_entries.py
 
@@ -169,7 +167,7 @@ Again this takes the .ini file as a parameter:
 $ python scripts/tag_entries.py --ini=development.ini
 
 
-11) Now start your server:
+10) Now start your server:
 
 Before starting your server there are a few settings
 in the .ini files that you should be aware of.
