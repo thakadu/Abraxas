@@ -98,6 +98,11 @@ $ migrate manage manage.py --repository=db_repository --url=mysql://abraxas:pass
 
 This will create a new manage.py file in the current directory.
 
+Verify that the manage.py file was created:
+
+$ ls -l manage.py 
+-rw-r--r-- 1 nn nn 178 2010-05-30 12:49 manage.py
+
 Now 'upgrade' the database which will create all the initial tables
 and indexes.
 
@@ -113,7 +118,6 @@ done
 ...
 7 -> 8... 
 done
-
 
 
 7) Load your initial feeds that you want to include in your
