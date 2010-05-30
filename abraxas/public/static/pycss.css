@@ -33,3 +33,4 @@ div#footer {border-bottom:3px solid #bbbbbb;text-align:center;border-top:3px sol
 div#sidebar_tags {padding: 0 0 0 0;margin-bottom: 1em;color: gray}
 h1#sidebar_sources_header {background:#e9e9e9;margin:0px;font-size:100%;color:black}
 h1#sidebar_tags_header {background:#e9e9e9;margin:0px;font-size:100%;color:black}
+span#subtitle {vertical-align:23px;font-size:200%}

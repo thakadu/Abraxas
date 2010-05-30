@@ -35,6 +35,9 @@ class BaseController(WSGIController):
         # Pass the logo_file name to the template context
         c.logo_file = config.get('logo_file', 'logo.png')
 
+        # Pass the site sub-title to the template context
+        c.subtitle = config.get('banner_subtitle', None)
+
         # Set up pagination
         if self.__class__.__name__ == 'EntryController':
             if not 'view' in kwds:
